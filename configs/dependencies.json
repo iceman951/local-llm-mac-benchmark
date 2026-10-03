@@ -1,0 +1,10 @@
+{
+  "aider": {
+    "url": "https://github.com/Aider-AI/aider.git",
+    "commit": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c"
+  },
+  "polyglot-benchmark": {
+    "url": "https://github.com/Aider-AI/polyglot-benchmark.git",
+    "commit": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f"
+  }
+}

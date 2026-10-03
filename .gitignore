@@ -1,0 +1,26 @@
+.DS_Store
+.deps/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+.env
+.env.*
+!.env.example
+configs/benchmark.env
+*.gguf
+*.safetensors
+*.ggml
+*.pt
+*.pth
+*.onnx
+*.tar
+*.tar.gz
+*.zip
+node_modules/
+target/
+build/
+.gradle/
+# Keep raw outputs, metadata, summary CSV and non-secret experiment configs.
