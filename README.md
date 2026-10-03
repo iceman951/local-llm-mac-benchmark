@@ -14,6 +14,73 @@ The goal is to make coding task success rate and system resource usage auditable
 on an everyday laptop. Benchmark correctness, model quality, and hardware
 performance are different questions; a pass rate does not measure intelligence.
 
+## Results
+
+Smoke runs on 2026-10-03: Apple M5 MacBook Air, 24 GiB, Ollama 0.35.1, Q4_K_M,
+context 8192, requested temperature 0, whole-file edits, two attempts, one
+worker. Every model got the same three tasks in the same order. Three tasks and
+one run per model cannot rank these models.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/outcomes-dark.svg">
+  <img alt="Per-task outcomes: every model failed all three tasks; Java reached 39 of 41 unit tests for every model." src="docs/figures/outcomes-light.svg" width="100%">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/measurements-dark.svg">
+  <img alt="Wall time, completion tokens, host swap and resident model size per model." src="docs/figures/measurements-light.svg" width="100%">
+</picture>
+
+Experiment notes:
+[`qwen2.5-coder:7b`](docs/experiment-20261003-smoke.md) ·
+[`qwen3.5:9b`](docs/experiment-20261003-qwen35-9b.md) ·
+[`qwen2.5-coder:14b`](docs/experiment-20261003-qwen25-coder-14b.md) ·
+[`ornith:9b`](docs/experiment-20261003-ornith-9b.md)
+
+<details>
+<summary>Table view</summary>
+
+| Model | Python `forth` | Go `alphametics` | Java `rational-numbers` | Run time |
+| --- | --- | --- | --- | ---: |
+| `qwen2.5-coder:7b` | ✗ 0/54 tests | ✗ compile error | ✗ 39/41 tests | 404 s |
+| `qwen3.5:9b` | ✗ 9/54 tests | ✗ 2/10 tests | ✗ 39/41 tests | 851 s |
+| `qwen2.5-coder:14b` | ✗ syntax error, no tests ran | ✗ 2/10 tests | ✗ 39/41 tests | 1,549 s |
+| `ornith:9b` | ✗ no code applied (0/54) | ✗ no code applied (0/10) | ✗ 39/41 tests | 1,543 s |
+
+| Model | Python | Go | Java | Completion tokens | Resident size | Swap before → peak |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| `qwen2.5-coder:7b` | 104.6 s | 123.0 s | 139.8 s | 4,842 | 4.98 GB | 0 → 117 MiB |
+| `qwen3.5:9b` | 195.5 s | 393.6 s | 256.9 s | 10,550 | 5.77 GB | 1,736 → 2,659 MiB |
+| `qwen2.5-coder:14b` | 901.2 s | 305.6 s | 268.1 s | 8,232 | 10.27 GB | 2,496 → 9,527 MiB |
+| `ornith:9b` | 354.0 s | 860.6 s | 324.0 s | 24,825 | 6.16 GB | 6,778 → 6,778 MiB |
+
+Test counts are from the final attempt. Completion tokens are summed over both
+attempts as recorded by Aider. Resident size is the GPU allocation from Ollama
+`/api/ps`. Swap is a whole-host value, not model-only memory.
+
+</details>
+
+Figures are generated from saved metadata by `python3 scripts/render-figures.py`;
+reviewed per-task notes live in [docs/figures/task-notes.json](docs/figures/task-notes.json).
+
+### Reading these results
+
+- **`ornith:9b` used up its context on reasoning.** For Python and Go, each
+  response was about 7k tokens of thinking with an empty answer, so the stubs
+  stayed unchanged. This run measures a thinking model at context 8192 more
+  than its coding ability.
+- **`qwen2.5-coder:14b` caused heavy swapping** (up to 9.5 GB) and two Ollama
+  context shifts during the Python task, so its times are not clean speed
+  measurements.
+- Background applications were left open, and the 14B run's leftover swap was
+  still present when `ornith:9b` started.
+- All runs completed with exit code 0 and no unknown outcomes, test timeouts or
+  task exceptions. Model digests, the task manifest, Docker image and adapter
+  hash matched across runs. No generated code was repaired by hand.
+
+Machine-readable results: [results/summary/results.csv](results/summary/results.csv)
+and per-run JSON in [results/summary/](results/summary/).
+
 ## What runs where
 
 ```text

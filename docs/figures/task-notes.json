@@ -1,0 +1,23 @@
+{
+  "_comment": "Reviewed per-task observations for README figures, keyed by run ID and task path. Test counts are from the final attempt; null means no test count applies. Sources: docs/experiment-20261003-*.md and raw stdout.",
+  "20261003T035503Z-smoke-ae34538d": {
+    "python/exercises/practice/forth": {"tests_passed": 0, "tests_total": 54, "label": null, "note": "Treated list input as a string"},
+    "go/exercises/practice/alphametics": {"tests_passed": null, "tests_total": 10, "label": "Compile error", "note": "string/slice/map type mismatches"},
+    "java/exercises/practice/rational-numbers": {"tests_passed": 39, "tests_total": 41, "label": null, "note": "Real-number exponentiation cases fail"}
+  },
+  "20261003T040917Z-qwen35-9b-smoke-0deb827c": {
+    "python/exercises/practice/forth": {"tests_passed": 9, "tests_total": 54, "label": null, "note": "Partial interpreter"},
+    "go/exercises/practice/alphametics": {"tests_passed": 2, "tests_total": 10, "label": null, "note": "Compiled on retry; wrong answers"},
+    "java/exercises/practice/rational-numbers": {"tests_passed": 39, "tests_total": 41, "label": null, "note": "Real-number exponentiation cases fail"}
+  },
+  "20261003T043750Z-qwen25-coder-14b-smoke-7a3e6cf3": {
+    "python/exercises/practice/forth": {"tests_passed": null, "tests_total": 54, "label": "Syntax error", "note": "No tests ran; 8 lint-fix rounds"},
+    "go/exercises/practice/alphametics": {"tests_passed": 2, "tests_total": 10, "label": null, "note": "Compiled on retry; no solutions found"},
+    "java/exercises/practice/rational-numbers": {"tests_passed": 39, "tests_total": 41, "label": null, "note": "Real-number exponentiation cases fail"}
+  },
+  "20261003T055010Z-ornith-9b-smoke-a49f7a44": {
+    "python/exercises/practice/forth": {"tests_passed": 0, "tests_total": 54, "label": null, "note": "Empty answer after thinking; stub kept"},
+    "go/exercises/practice/alphametics": {"tests_passed": 0, "tests_total": 10, "label": null, "note": "Empty answer after thinking; stub kept"},
+    "java/exercises/practice/rational-numbers": {"tests_passed": 39, "tests_total": 41, "label": null, "note": "Real-number exponentiation cases fail"}
+  }
+}

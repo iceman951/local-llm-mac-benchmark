@@ -24,6 +24,12 @@ since three tasks cannot separate the models (all 0/3, Java 39/41 every run).
 Host swap was still ~6.7 GB after the 14B run; a reboot or closing apps would
 give a cleaner baseline, but that is the user's choice.
 
+README results figures: `scripts/render-figures.py` (stdlib only, reads
+metadata/raw records, never runs models) writes light/dark SVGs to
+`docs/figures/`, embedded in README via `<picture>`. Reviewed per-task test
+counts and notes are in `docs/figures/task-notes.json`. After a new run, add
+its entry there, rerun the script, and update the README table view.
+
 ## Completed experiments
 
 | Model | Run ID | Status | Passed | Wall time |
