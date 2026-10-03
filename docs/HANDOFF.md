@@ -1,24 +1,28 @@
 # Benchmark handoff
 
-Last updated: 2026-10-03 12:10 (Asia/Bangkok), after the third smoke run completed.
+Last updated: 2026-10-03 12:51 (Asia/Bangkok), after launching the fourth smoke run.
 
 ## Current task and next action
 
-No benchmark is running. The runner for `qwen2.5-coder:14b` exited normally;
-no `llm-bench-*` container remains. All three requested smoke runs are complete
-and documented. There is no queued model. Wait for the user's next instruction;
-do not start another run automatically.
+The user asked to try the next model. Selected `ornith:9b` (Ollama library,
+8.95B, Q4_K_M, 5.6 GB, MIT, Qwen3.5-based agentic-coding fine-tune with
+built-in thinking; ID `a75697c14589`). Chosen because it fits the 24 GiB budget
+(the 14B run swapped heavily) and is directly comparable with `qwen3.5:9b`.
+Download completed (`logs/model-pull-ornith-9b-20261003.log`); doctor passed
+(`logs/doctor-ornith-9b-20261003.log`). The fourth run is active:
 
-Before acting, verify `git status --short`, `docker ps`, and runner processes:
-another agent/user may have advanced the work since this snapshot. The third
-run's artifacts (config, logs, metadata, raw outputs, note, README/summary
-updates) were uncommitted at this checkpoint. Do not commit unless asked.
+- Run ID: `20261003T055010Z-ornith-9b-smoke-a49f7a44`.
+- Started 12:50 Asia/Bangkok; runner PID observed: `84849`.
+- Container observed: `llm-bench-4f364f2a6f8a`.
+- Launch log: `logs/smoke-ornith-9b-20261003.log`.
+- Config: `configs/ornith-9b-smoke.env` (copy of the Qwen3.5 config, only
+  `MODEL_NAME` and `RUN_LABEL` changed).
+- Baseline: AC, battery 80% not charging, swap used 6,778 MiB (left over from
+  the 14B run), no resident model, no other container.
 
-Possible next steps if the user asks: (1) try another model; with the 14B
-model, host swap rose from ~2.5 GB to ~9.5 GB, so larger models need care with
-the 24 GiB budget or closing background apps by the user; (2) a larger,
-intentionally new task manifest, because three tasks cannot separate these
-models (all 0/3, Java 39/41 every time).
+Next: monitor through completion, review raw test output, write
+`docs/experiment-20261003-ornith-9b.md`, update README and this handoff.
+Verify the PID/container identity before acting; do not launch a duplicate.
 
 ## Completed experiments
 

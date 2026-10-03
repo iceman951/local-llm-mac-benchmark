@@ -1,0 +1,21 @@
+BENCHMARK_TEST_COUNT=3 ./scripts/run-aider.sh
+[OK] macOS
+[OK] Apple Silicon (native arm64 Python)
+[OK] git
+[OK] docker
+[OK] ollama
+[OK] python3
+[OK] Docker daemon
+[OK] Ollama API
+[OK] Model installed and digest available
+[OK] aider: clean checkout at pinned commit (make setup)
+[OK] polyglot-benchmark: clean checkout at pinned commit (make setup)
+[OK] Aider benchmark harness
+[OK] Polyglot exercises
+[OK] Pinned Docker image (make build-image)
+[OK] Docker image architecture: arm64
+[OK] Writable results/raw
+[OK] Writable results/summary
+[OK] Writable metadata/runs
+[OK] Writable logs
+Run: 20261003T055010Z-ornith-9b-smoke-a49f7a44; 3 tasks. Logs: results/raw/20261003T055010Z-ornith-9b-smoke-a49f7a44/
