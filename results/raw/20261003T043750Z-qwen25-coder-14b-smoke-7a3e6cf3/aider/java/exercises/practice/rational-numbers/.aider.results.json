@@ -1,0 +1,35 @@
+{
+    "testdir": "/run-data/aider/java/exercises/practice/rational-numbers",
+    "testcase": "rational-numbers",
+    "model": "ollama_chat/qwen2.5-coder:14b",
+    "edit_format": "whole",
+    "tests_outcomes": [
+        false,
+        false
+    ],
+    "cost": 0.0,
+    "duration": 257.16954922676086,
+    "test_timeouts": 0,
+    "commit_hash": "5dc9490",
+    "num_error_outputs": 0,
+    "num_user_asks": 0,
+    "num_exhausted_context_windows": 0,
+    "num_malformed_responses": 0,
+    "syntax_errors": 0,
+    "indentation_errors": 0,
+    "lazy_comments": 0,
+    "reasoning_effort": null,
+    "prompt_tokens": 6366,
+    "completion_tokens": 1709,
+    "thinking_tokens": null,
+    "chat_hashes": [
+        [
+            "1c22c13059a2f670c5c612057ac08af0a9fee23f",
+            "8a6d27e8eae20b7c882d8b4d43f9b08a163f6f36"
+        ],
+        [
+            "1c22c13059a2f670c5c612057ac08af0a9fee23f",
+            "b300c3e0b86e94144654c2883a1b5383087e59a5"
+        ]
+    ]
+}

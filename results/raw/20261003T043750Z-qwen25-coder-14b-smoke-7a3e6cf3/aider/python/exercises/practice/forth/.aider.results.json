@@ -1,0 +1,59 @@
+{
+    "testdir": "/run-data/aider/python/exercises/practice/forth",
+    "testcase": "forth",
+    "model": "ollama_chat/qwen2.5-coder:14b",
+    "edit_format": "whole",
+    "tests_outcomes": [
+        false,
+        false
+    ],
+    "cost": 0.0,
+    "duration": 893.6379089355469,
+    "test_timeouts": 0,
+    "commit_hash": "5dc9490",
+    "num_error_outputs": 0,
+    "num_user_asks": 8,
+    "num_exhausted_context_windows": 0,
+    "num_malformed_responses": 0,
+    "syntax_errors": 0,
+    "indentation_errors": 0,
+    "lazy_comments": 0,
+    "reasoning_effort": null,
+    "prompt_tokens": 43461,
+    "completion_tokens": 4979,
+    "thinking_tokens": null,
+    "chat_hashes": [
+        [
+            "1c22c13059a2f670c5c612057ac08af0a9fee23f",
+            "24a77ca39f1bd7105a4bbce1d7acad97d6ce6668"
+        ],
+        [
+            "1c22c13059a2f670c5c612057ac08af0a9fee23f",
+            "a5732fda0b0f423b22a4e2c5d38c96eeadbfb431"
+        ],
+        [
+            "1c22c13059a2f670c5c612057ac08af0a9fee23f",
+            "e9e10e08a4d6de73cc74d93ddbe6ea024bbcf4dc"
+        ],
+        [
+            "1c22c13059a2f670c5c612057ac08af0a9fee23f",
+            "8e9ba92cf933747213fa1dc69def34e73088ae16"
+        ],
+        [
+            "1c22c13059a2f670c5c612057ac08af0a9fee23f",
+            "8e9ba92cf933747213fa1dc69def34e73088ae16"
+        ],
+        [
+            "1c22c13059a2f670c5c612057ac08af0a9fee23f",
+            "8e9ba92cf933747213fa1dc69def34e73088ae16"
+        ],
+        [
+            "1c22c13059a2f670c5c612057ac08af0a9fee23f",
+            "8e9ba92cf933747213fa1dc69def34e73088ae16"
+        ],
+        [
+            "1c22c13059a2f670c5c612057ac08af0a9fee23f",
+            "8e9ba92cf933747213fa1dc69def34e73088ae16"
+        ]
+    ]
+}
