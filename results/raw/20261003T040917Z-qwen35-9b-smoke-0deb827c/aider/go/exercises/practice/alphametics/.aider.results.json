@@ -1,0 +1,35 @@
+{
+    "testdir": "/run-data/aider/go/exercises/practice/alphametics",
+    "testcase": "alphametics",
+    "model": "ollama_chat/qwen3.5:9b",
+    "edit_format": "whole",
+    "tests_outcomes": [
+        false,
+        false
+    ],
+    "cost": 0.0,
+    "duration": 390.5509831905365,
+    "test_timeouts": 0,
+    "commit_hash": "5dc9490",
+    "num_error_outputs": 0,
+    "num_user_asks": 0,
+    "num_exhausted_context_windows": 0,
+    "num_malformed_responses": 0,
+    "syntax_errors": 0,
+    "indentation_errors": 0,
+    "lazy_comments": 0,
+    "reasoning_effort": null,
+    "prompt_tokens": 4938,
+    "completion_tokens": 3611,
+    "thinking_tokens": null,
+    "chat_hashes": [
+        [
+            "920631d651765aea10dea80606ba660652b7ed6f",
+            "3d95b67f6e82a5e7eebbf52c507ab2cb1b4d4070"
+        ],
+        [
+            "920631d651765aea10dea80606ba660652b7ed6f",
+            "444db215e2edb8522e4fc583ddec0d6e505f0587"
+        ]
+    ]
+}

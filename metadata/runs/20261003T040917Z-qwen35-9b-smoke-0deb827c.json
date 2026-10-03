@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "run_id": "20261003T040917Z-qwen35-9b-smoke-0deb827c",
+  "timestamp": "2026-10-03T04:09:17.826599+00:00",
+  "machine": {
+    "timestamp": "2026-10-03T04:09:17.688202+00:00",
+    "hostname": "Vorrapongs-MacBook-Air.local",
+    "macos_version": "26.6.2",
+    "macos_build": "25G83",
+    "darwin_version": "25.6.0",
+    "os": "Darwin",
+    "architecture": "arm64",
+    "chip": "Apple M5",
+    "physical_memory_bytes": 25769803776,
+    "hardware_model": "Mac17,3",
+    "ollama_version": "ollama version is 0.35.1",
+    "docker_version": "Docker version 29.8.1, build 4a63305",
+    "docker_server_version": "29.8.1",
+    "git_version": "git version 2.55.0",
+    "python_version": "3.9.6",
+    "repo": {
+      "commit": "bba6fddafc799d9b938e5fc2e01d608e593f3010",
+      "dirty": true
+    },
+    "dependencies": {
+      "aider": {
+        "commit": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+        "dirty": false
+      },
+      "polyglot-benchmark": {
+        "commit": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+        "dirty": false
+      }
+    }
+  },
+  "runtime": {
+    "name": "ollama",
+    "version": "0.35.1",
+    "docker_image_id": "sha256:a5446bed7db6e27654d6634ffecf173f9a0627a13ebc77332e2072379dafce25",
+    "docker_image_digests": [
+      "local-llm-aider-benchmark@sha256:a5446bed7db6e27654d6634ffecf173f9a0627a13ebc77332e2072379dafce25"
+    ],
+    "docker_architecture": "arm64",
+    "docker_vm": {
+      "NCPU": 10,
+      "MemTotal": 8319504384,
+      "ServerVersion": "29.8.1",
+      "Architecture": "aarch64"
+    }
+  },
+  "model": {
+    "name": "qwen3.5:9b",
+    "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+    "size": 6594474711,
+    "modified_at": "2026-10-03T11:09:00.380760502+07:00",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "9.7B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 262144,
+      "embedding_length": 4096
+    },
+    "parameters": "top_p                          0.95\npresence_penalty               1.5\ntemperature                    1\ntop_k                          20",
+    "model_info": {
+      "general.architecture": "qwen35",
+      "general.file_type": 15,
+      "general.parameter_count": 9653104368,
+      "general.quantization_version": 2,
+      "qwen35.attention.head_count": 16,
+      "qwen35.attention.head_count_kv": [
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        4
+      ],
+      "qwen35.attention.key_length": 256,
+      "qwen35.attention.layer_norm_rms_epsilon": 1e-06,
+      "qwen35.attention.value_length": 256,
+      "qwen35.block_count": 32,
+      "qwen35.context_length": 262144,
+      "qwen35.embedding_length": 4096,
+      "qwen35.feed_forward_length": 12288,
+      "qwen35.full_attention_interval": 4,
+      "qwen35.image_token_id": 248056,
+      "qwen35.mrope_sections": [
+        11,
+        11,
+        10
+      ],
+      "qwen35.rope.dimension_count": 64,
+      "qwen35.rope.dimension_sections": [
+        11,
+        11,
+        10
+      ],
+      "qwen35.rope.freq_base": 10000000,
+      "qwen35.rope.mrope_interleaved": true,
+      "qwen35.rope.mrope_section": [
+        11,
+        11,
+        10
+      ],
+      "qwen35.ssm.conv_kernel": 4,
+      "qwen35.ssm.group_count": 16,
+      "qwen35.ssm.inner_size": 4096,
+      "qwen35.ssm.state_size": 128,
+      "qwen35.ssm.time_step_rank": 32,
+      "qwen35.ssm.v_head_reordered": true,
+      "qwen35.vision.attention.head_count": 16,
+      "qwen35.vision.block_count": 27,
+      "qwen35.vision.deepstack_visual_indexes": [],
+      "qwen35.vision.embedding_length": 1152,
+      "qwen35.vision.image_mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "qwen35.vision.image_std": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "qwen35.vision.longest_edge": 16777216,
+      "qwen35.vision.num_channels": 3,
+      "qwen35.vision.patch_size": 16,
+      "qwen35.vision.shortest_edge": 65536,
+      "qwen35.vision.spatial_merge_size": 2,
+      "qwen35.vision.temporal_patch_size": 2,
+      "qwen35.vision_end_token_id": 248054,
+      "qwen35.vision_start_token_id": 248053,
+      "tokenizer.ggml.add_eos_token": false,
+      "tokenizer.ggml.add_padding_token": false,
+      "tokenizer.ggml.eos_token_id": 248046,
+      "tokenizer.ggml.merges": [],
+      "tokenizer.ggml.model": "gpt2",
+      "tokenizer.ggml.padding_token_id": 248044,
+      "tokenizer.ggml.pre": "qwen35",
+      "tokenizer.ggml.scores": [],
+      "tokenizer.ggml.token_type": [],
+      "tokenizer.ggml.tokens": []
+    },
+    "template_sha256": "b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315",
+    "digest_after": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7"
+  },
+  "benchmark": {
+    "name": "aider-polyglot",
+    "dependencies": {
+      "aider": {
+        "url": "https://github.com/Aider-AI/aider.git",
+        "commit": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c"
+      },
+      "polyglot-benchmark": {
+        "url": "https://github.com/Aider-AI/polyglot-benchmark.git",
+        "commit": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f"
+      }
+    },
+    "adapter_sha256": "debf5142bf664ef7a54db5eabe683c6766bd0584dde4cdf38dbefcacbe02030e"
+  },
+  "configuration": {
+    "MODEL_NAME": "qwen3.5:9b",
+    "OLLAMA_BASE_URL": "http://127.0.0.1:11434",
+    "OLLAMA_DOCKER_BASE_URL": "http://host.docker.internal:11434",
+    "BENCHMARK_TEST_COUNT": "3",
+    "BENCHMARK_THREADS": "1",
+    "BENCHMARK_SEED": "0",
+    "BENCHMARK_TRIES": "2",
+    "MODEL_NUM_CTX": "8192",
+    "MODEL_TEMPERATURE": "0",
+    "EDIT_FORMAT": "whole",
+    "RUN_LABEL": "qwen35-9b-smoke",
+    "STATS_INTERVAL_SEC": "5",
+    "DOCKER_IMAGE": "local-llm-aider-benchmark:pinned",
+    "DOCKER_MEMORY": "6g",
+    "DOCKER_CPUS": "4",
+    "TASK_MANIFEST": "tasks.json"
+  },
+  "observations": {
+    "before": {
+      "timestamp": "2026-10-03T04:09:19.736279+00:00",
+      "cpu_percent": 12.150000000000006,
+      "load_1m": 2.08154296875,
+      "memory_used_mb": 23573.421875,
+      "swap_used_mb": 1735.62,
+      "battery_percent": 80,
+      "battery_state": "AC attached",
+      "power_source": "AC Power"
+    },
+    "after": {
+      "timestamp": "2026-10-03T04:23:30.686176+00:00",
+      "cpu_percent": 16.019999999999996,
+      "load_1m": 1.84765625,
+      "memory_used_mb": 23816.0,
+      "swap_used_mb": 2672.69,
+      "battery_percent": 80,
+      "battery_state": "AC attached",
+      "power_source": "AC Power"
+    }
+  },
+  "result": {
+    "status": "completed",
+    "exit_code": 0,
+    "total_time_sec": 850.6512078330001,
+    "finished_at": "2026-10-03T04:23:30.957819+00:00",
+    "task_count": 3,
+    "passed": 0,
+    "failed": 3,
+    "completed_tasks": 3,
+    "unknown_tasks": 0,
+    "pass_rate": 0.0,
+    "avg_time_sec": 281.98863882300003,
+    "peak_memory_mb": 23865.03125,
+    "peak_swap_mb": 2658.81,
+    "battery_start": 80,
+    "battery_end": 80,
+    "battery_drop": null,
+    "per_language": {
+      "go": {
+        "task_count": 1,
+        "completed": 1,
+        "passed": 0,
+        "failed": 1,
+        "pass_rate": 0.0
+      },
+      "java": {
+        "task_count": 1,
+        "completed": 1,
+        "passed": 0,
+        "failed": 1,
+        "pass_rate": 0.0
+      },
+      "python": {
+        "task_count": 1,
+        "completed": 1,
+        "passed": 0,
+        "failed": 1,
+        "pass_rate": 0.0
+      }
+    },
+    "tasks": [
+      {
+        "task": "python/exercises/practice/forth",
+        "language": "python",
+        "passed": false,
+        "duration_sec": 195.49587379800002,
+        "aider_duration_sec": 193.02729415893555
+      },
+      {
+        "task": "go/exercises/practice/alphametics",
+        "language": "go",
+        "passed": false,
+        "duration_sec": 393.58447292900007,
+        "aider_duration_sec": 390.5509831905365
+      },
+      {
+        "task": "java/exercises/practice/rational-numbers",
+        "language": "java",
+        "passed": false,
+        "duration_sec": 256.88556974200003,
+        "aider_duration_sec": 243.08362698554993
+      }
+    ],
+    "tokens_per_sec": null,
+    "temperature_celsius": null,
+    "power_watts": null
+  },
+  "unsupported_metrics": [
+    "tokens_per_sec",
+    "temperature_celsius",
+    "power_watts"
+  ]
+}
