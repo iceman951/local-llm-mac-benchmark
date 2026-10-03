@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "run_id": "20261003T035503Z-smoke-ae34538d",
+  "timestamp": "2026-10-03T03:55:03.959284+00:00",
+  "machine": {
+    "timestamp": "2026-10-03T03:55:03.818237+00:00",
+    "hostname": "Vorrapongs-MacBook-Air.local",
+    "macos_version": "26.6.2",
+    "macos_build": "25G83",
+    "darwin_version": "25.6.0",
+    "os": "Darwin",
+    "architecture": "arm64",
+    "chip": "Apple M5",
+    "physical_memory_bytes": 25769803776,
+    "hardware_model": "Mac17,3",
+    "ollama_version": "ollama version is 0.35.1",
+    "docker_version": "Docker version 29.8.1, build 4a63305",
+    "docker_server_version": "29.8.1",
+    "git_version": "git version 2.55.0",
+    "python_version": "3.9.6",
+    "repo": {
+      "commit": "63d06a87acb7651fb8e63fd97996cd6b9ac91f32",
+      "dirty": true
+    },
+    "dependencies": {
+      "aider": {
+        "commit": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+        "dirty": false
+      },
+      "polyglot-benchmark": {
+        "commit": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+        "dirty": false
+      }
+    }
+  },
+  "runtime": {
+    "name": "ollama",
+    "version": "0.35.1",
+    "docker_image_id": "sha256:a5446bed7db6e27654d6634ffecf173f9a0627a13ebc77332e2072379dafce25",
+    "docker_image_digests": [
+      "local-llm-aider-benchmark@sha256:a5446bed7db6e27654d6634ffecf173f9a0627a13ebc77332e2072379dafce25"
+    ],
+    "docker_architecture": "arm64",
+    "docker_vm": {
+      "NCPU": 10,
+      "MemTotal": 8319504384,
+      "ServerVersion": "29.8.1",
+      "Architecture": "aarch64"
+    }
+  },
+  "model": {
+    "name": "qwen2.5-coder:7b",
+    "digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+    "size": 4683087561,
+    "modified_at": "2026-10-03T10:51:08.381023335+07:00",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "7.6B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 32768,
+      "embedding_length": 3584
+    },
+    "parameters": null,
+    "model_info": {
+      "general.architecture": "qwen2",
+      "general.base_model.0.name": "Qwen2.5 Coder 7B",
+      "general.base_model.0.organization": "Qwen",
+      "general.base_model.0.repo_url": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B",
+      "general.base_model.count": 1,
+      "general.basename": "Qwen2.5-Coder",
+      "general.file_type": 15,
+      "general.finetune": "Instruct",
+      "general.languages": [
+        "en"
+      ],
+      "general.license": "apache-2.0",
+      "general.license.link": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct/blob/main/LICENSE",
+      "general.parameter_count": 7615616512,
+      "general.quantization_version": 2,
+      "general.size_label": "7B",
+      "general.tags": [
+        "code",
+        "codeqwen",
+        "chat",
+        "qwen",
+        "qwen-coder",
+        "text-generation"
+      ],
+      "general.type": "model",
+      "qwen2.attention.head_count": 28,
+      "qwen2.attention.head_count_kv": 4,
+      "qwen2.attention.layer_norm_rms_epsilon": 1e-06,
+      "qwen2.block_count": 28,
+      "qwen2.context_length": 32768,
+      "qwen2.embedding_length": 3584,
+      "qwen2.feed_forward_length": 18944,
+      "qwen2.rope.freq_base": 1000000,
+      "tokenizer.ggml.add_bos_token": false,
+      "tokenizer.ggml.bos_token_id": 151643,
+      "tokenizer.ggml.eos_token_id": 151645,
+      "tokenizer.ggml.merges": [],
+      "tokenizer.ggml.model": "gpt2",
+      "tokenizer.ggml.padding_token_id": 151643,
+      "tokenizer.ggml.pre": "qwen2",
+      "tokenizer.ggml.token_type": [],
+      "tokenizer.ggml.tokens": []
+    },
+    "template_sha256": "1e65450c30670713aa47fe23e8b9662bdf4065e81cc8e3cbfaa98924fcc0d320",
+    "digest_after": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364"
+  },
+  "benchmark": {
+    "name": "aider-polyglot",
+    "dependencies": {
+      "aider": {
+        "url": "https://github.com/Aider-AI/aider.git",
+        "commit": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c"
+      },
+      "polyglot-benchmark": {
+        "url": "https://github.com/Aider-AI/polyglot-benchmark.git",
+        "commit": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f"
+      }
+    },
+    "adapter_sha256": "debf5142bf664ef7a54db5eabe683c6766bd0584dde4cdf38dbefcacbe02030e"
+  },
+  "configuration": {
+    "MODEL_NAME": "qwen2.5-coder:7b",
+    "OLLAMA_BASE_URL": "http://127.0.0.1:11434",
+    "OLLAMA_DOCKER_BASE_URL": "http://host.docker.internal:11434",
+    "BENCHMARK_TEST_COUNT": "3",
+    "BENCHMARK_THREADS": "1",
+    "BENCHMARK_SEED": "0",
+    "BENCHMARK_TRIES": "2",
+    "MODEL_NUM_CTX": "8192",
+    "MODEL_TEMPERATURE": "0",
+    "EDIT_FORMAT": "whole",
+    "RUN_LABEL": "smoke",
+    "STATS_INTERVAL_SEC": "5",
+    "DOCKER_IMAGE": "local-llm-aider-benchmark:pinned",
+    "DOCKER_MEMORY": "6g",
+    "DOCKER_CPUS": "4",
+    "TASK_MANIFEST": "tasks.json"
+  },
+  "observations": {
+    "before": {
+      "timestamp": "2026-10-03T03:55:04.635578+00:00",
+      "cpu_percent": 14.89,
+      "load_1m": 2.40283203125,
+      "memory_used_mb": 22969.59375,
+      "swap_used_mb": 0.0,
+      "battery_percent": 73,
+      "battery_state": "charging",
+      "power_source": "AC Power"
+    },
+    "after": {
+      "timestamp": "2026-10-03T04:01:49.209027+00:00",
+      "cpu_percent": 10.099999999999994,
+      "load_1m": 1.51904296875,
+      "memory_used_mb": 23847.96875,
+      "swap_used_mb": 117.44,
+      "battery_percent": 75,
+      "battery_state": "charging",
+      "power_source": "AC Power"
+    }
+  },
+  "result": {
+    "status": "completed",
+    "exit_code": 0,
+    "total_time_sec": 404.306337375,
+    "finished_at": "2026-10-03T04:01:49.463679+00:00",
+    "task_count": 3,
+    "passed": 0,
+    "failed": 3,
+    "completed_tasks": 3,
+    "unknown_tasks": 0,
+    "pass_rate": 0.0,
+    "avg_time_sec": 122.46960900033332,
+    "peak_memory_mb": 23868.546875,
+    "peak_swap_mb": 117.44,
+    "battery_start": 73,
+    "battery_end": 75,
+    "battery_drop": null,
+    "per_language": {
+      "go": {
+        "task_count": 1,
+        "completed": 1,
+        "passed": 0,
+        "failed": 1,
+        "pass_rate": 0.0
+      },
+      "java": {
+        "task_count": 1,
+        "completed": 1,
+        "passed": 0,
+        "failed": 1,
+        "pass_rate": 0.0
+      },
+      "python": {
+        "task_count": 1,
+        "completed": 1,
+        "passed": 0,
+        "failed": 1,
+        "pass_rate": 0.0
+      }
+    },
+    "tasks": [
+      {
+        "task": "python/exercises/practice/forth",
+        "language": "python",
+        "passed": false,
+        "duration_sec": 104.63907262999999,
+        "aider_duration_sec": 102.50842666625977
+      },
+      {
+        "task": "go/exercises/practice/alphametics",
+        "language": "go",
+        "passed": false,
+        "duration_sec": 122.97695864000002,
+        "aider_duration_sec": 120.43278622627258
+      },
+      {
+        "task": "java/exercises/practice/rational-numbers",
+        "language": "java",
+        "passed": false,
+        "duration_sec": 139.79279573099996,
+        "aider_duration_sec": 124.82007551193237
+      }
+    ],
+    "tokens_per_sec": null,
+    "temperature_celsius": null,
+    "power_watts": null
+  },
+  "unsupported_metrics": [
+    "tokens_per_sec",
+    "temperature_celsius",
+    "power_watts"
+  ]
+}

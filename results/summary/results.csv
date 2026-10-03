@@ -1,1 +1,2 @@
 run_id,timestamp,model,benchmark,task_count,passed,failed,pass_rate,total_time_sec,avg_time_sec,peak_memory_mb,peak_swap_mb,battery_start,battery_end,battery_drop,completed_tasks,unknown_tasks,status
+20261003T035503Z-smoke-ae34538d,2026-10-03T03:55:03.959284+00:00,qwen2.5-coder:7b,aider-polyglot,3,0,3,0.0,404.306337375,122.46960900033332,23868.546875,117.44,73,75,,3,0,completed

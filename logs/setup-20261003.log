@@ -1,0 +1,14 @@
+./scripts/setup.sh
+[OK] git
+[OK] python3
+[OK] docker
+[OK] ollama
+Cloning source dependency aider at 5dc9490bb35f9729ef2c95d00a19ccd30c26339c
+Cloning into '/Users/vorrapongkertnat/Desktop/github/local-llm-mac-benchmark/.deps/aider'...
+HEAD is now at 5dc9490bb Merge pull request #5173 from Cyberfilo/feat/anthropic_models-list-add-opus-4-5
+Cloning source dependency polyglot-benchmark at 7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f
+Cloning into '/Users/vorrapongkertnat/Desktop/github/local-llm-mac-benchmark/.deps/polyglot-benchmark'...
+HEAD is now at 7e0611e copy
+Source setup complete. Configure configs/benchmark.env, start Docker and Ollama,
+then explicitly run make build-image (large download/build) and make doctor.
+No models were downloaded; no benchmark was started.

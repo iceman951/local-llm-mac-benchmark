@@ -1,0 +1,18 @@
+{
+  "MODEL_NAME": "qwen2.5-coder:7b",
+  "OLLAMA_BASE_URL": "http://127.0.0.1:11434",
+  "OLLAMA_DOCKER_BASE_URL": "http://host.docker.internal:11434",
+  "BENCHMARK_TEST_COUNT": "3",
+  "BENCHMARK_THREADS": "1",
+  "BENCHMARK_SEED": "0",
+  "BENCHMARK_TRIES": "2",
+  "MODEL_NUM_CTX": "8192",
+  "MODEL_TEMPERATURE": "0",
+  "EDIT_FORMAT": "whole",
+  "RUN_LABEL": "smoke",
+  "STATS_INTERVAL_SEC": "5",
+  "DOCKER_IMAGE": "local-llm-aider-benchmark:pinned",
+  "DOCKER_MEMORY": "6g",
+  "DOCKER_CPUS": "4",
+  "TASK_MANIFEST": "tasks.json"
+}

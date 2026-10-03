@@ -3,7 +3,9 @@
 Reproducible experiments for local coding assistants on Apple Silicon, starting
 with a **MacBook Air with 24 GB unified memory**, **Ollama**, and **Aider Polyglot**.
 This repository stores methodology, configuration, scripts, raw outputs, and
-summaries. It contains **no benchmark results yet**.
+summaries. The [first three-task smoke run](docs/experiment-20261003-smoke.md)
+completed on 2026-10-03 with `qwen2.5-coder:7b`: 0/3 tasks passed. This validates
+the execution pipeline, not a representative model-quality estimate.
 
 The goal is to make coding task success rate and system resource usage auditable
 on an everyday laptop. Benchmark correctness, model quality, and hardware

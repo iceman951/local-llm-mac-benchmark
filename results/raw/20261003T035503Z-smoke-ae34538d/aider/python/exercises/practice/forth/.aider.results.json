@@ -1,0 +1,39 @@
+{
+    "testdir": "/run-data/aider/python/exercises/practice/forth",
+    "testcase": "forth",
+    "model": "ollama_chat/qwen2.5-coder:7b",
+    "edit_format": "whole",
+    "tests_outcomes": [
+        false,
+        false
+    ],
+    "cost": 0.0,
+    "duration": 102.50842666625977,
+    "test_timeouts": 0,
+    "commit_hash": "5dc9490",
+    "num_error_outputs": 0,
+    "num_user_asks": 1,
+    "num_exhausted_context_windows": 0,
+    "num_malformed_responses": 0,
+    "syntax_errors": 0,
+    "indentation_errors": 0,
+    "lazy_comments": 0,
+    "reasoning_effort": null,
+    "prompt_tokens": 7604,
+    "completion_tokens": 1451,
+    "thinking_tokens": null,
+    "chat_hashes": [
+        [
+            "9bb33677979f4d9a37c5210ae90c3a430b3344d0",
+            "2674f628010a4c01bb7784f0e434d937a4df7adf"
+        ],
+        [
+            "9bb33677979f4d9a37c5210ae90c3a430b3344d0",
+            "fba9f5b8c606be241de20f07e2f6869b1358f356"
+        ],
+        [
+            "9bb33677979f4d9a37c5210ae90c3a430b3344d0",
+            "21bf4bb28b907a632b2a0a73fe88460ee9c9ba5c"
+        ]
+    ]
+}

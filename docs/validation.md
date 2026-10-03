@@ -25,3 +25,15 @@ arm64 image, package/toolchain compatibility, real Docker-to-host Ollama
 connectivity, actual model parameter acceptance, and a complete three-task smoke
 run. Complete these on an equipped host before publishing any quality or
 performance claims. Upstream build dependencies remain mutable as documented.
+
+## Real smoke validation follow-up — 2026-10-03
+
+The [first real smoke experiment](experiment-20261003-smoke.md) subsequently
+completed: source fetch, native arm64 image build, all preflight checks,
+Docker-to-host Ollama connectivity, inference, three task outcomes, host stats,
+and CSV/JSON summaries were exercised successfully. Context length 8192 was
+confirmed by Ollama's resident-model API. All 15 repository tests also passed.
+All three tasks failed their final tests; this is a recorded model outcome, not
+a claim that the pipeline could not execute. See the experiment note for failure
+details and upstream background-summarizer shutdown warnings. Effective
+temperature remains requested rather than independently traced.

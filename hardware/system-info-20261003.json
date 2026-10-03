@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-10-03T03:51:41.692697+00:00",
+  "hostname": "Vorrapongs-MacBook-Air.local",
+  "macos_version": "26.6.2",
+  "macos_build": "25G83",
+  "darwin_version": "25.6.0",
+  "os": "Darwin",
+  "architecture": "arm64",
+  "chip": "Apple M5",
+  "physical_memory_bytes": 25769803776,
+  "hardware_model": "Mac17,3",
+  "ollama_version": "ollama version is 0.35.1",
+  "docker_version": "Docker version 29.8.1, build 4a63305",
+  "docker_server_version": "29.8.1",
+  "git_version": "git version 2.55.0",
+  "python_version": "3.9.6",
+  "repo": {
+    "commit": "63d06a87acb7651fb8e63fd97996cd6b9ac91f32",
+    "dirty": true
+  },
+  "dependencies": {
+    "aider": {
+      "commit": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+      "dirty": false
+    },
+    "polyglot-benchmark": {
+      "commit": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+      "dirty": false
+    }
+  }
+}
