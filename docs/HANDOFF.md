@@ -1,28 +1,28 @@
 # Benchmark handoff
 
-Last updated: 2026-10-03 12:51 (Asia/Bangkok), after launching the fourth smoke run.
+Last updated: 2026-10-03 13:25 (Asia/Bangkok), after the fourth smoke run completed.
 
 ## Current task and next action
 
-The user asked to try the next model. Selected `ornith:9b` (Ollama library,
-8.95B, Q4_K_M, 5.6 GB, MIT, Qwen3.5-based agentic-coding fine-tune with
-built-in thinking; ID `a75697c14589`). Chosen because it fits the 24 GiB budget
-(the 14B run swapped heavily) and is directly comparable with `qwen3.5:9b`.
-Download completed (`logs/model-pull-ornith-9b-20261003.log`); doctor passed
-(`logs/doctor-ornith-9b-20261003.log`). The fourth run is active:
+No benchmark is running. The `ornith:9b` runner exited normally and no
+`llm-bench-*` container remains. All four requested smoke runs are complete
+and documented. No model is queued. Wait for the user's next instruction.
 
-- Run ID: `20261003T055010Z-ornith-9b-smoke-a49f7a44`.
-- Started 12:50 Asia/Bangkok; runner PID observed: `84849`.
-- Container observed: `llm-bench-4f364f2a6f8a`.
-- Launch log: `logs/smoke-ornith-9b-20261003.log`.
-- Config: `configs/ornith-9b-smoke.env` (copy of the Qwen3.5 config, only
-  `MODEL_NAME` and `RUN_LABEL` changed).
-- Baseline: AC, battery 80% not charging, swap used 6,778 MiB (left over from
-  the 14B run), no resident model, no other container.
+Before acting, verify `git status --short`, `docker ps` and runner processes.
+The user committed `8dfc27c` ("ornith:9b") at 13:00, while the fourth run was
+still in progress (Go task), so that commit holds partial artifacts and
+`running` metadata. The final metadata, raw outputs, summaries, note and
+README/handoff updates were uncommitted at this checkpoint. Do not commit
+unless asked.
 
-Next: monitor through completion, review raw test output, write
-`docs/experiment-20261003-ornith-9b.md`, update README and this handoff.
-Verify the PID/container identity before acting; do not launch a duplicate.
+Possible next steps if the user asks: (1) thinking models (`qwen3.5:9b`,
+`ornith:9b`) are hampered by context 8192: Ornith spent the whole window on
+reasoning and returned empty answers for Python and Go. A run with a larger
+`MODEL_NUM_CTX` (e.g. 32768, memory permitting) or thinking disabled would be a
+new, labeled experimental condition; (2) a larger intentional task manifest,
+since three tasks cannot separate the models (all 0/3, Java 39/41 every run).
+Host swap was still ~6.7 GB after the 14B run; a reboot or closing apps would
+give a cleaner baseline, but that is the user's choice.
 
 ## Completed experiments
 
@@ -31,6 +31,7 @@ Verify the PID/container identity before acting; do not launch a duplicate.
 | `qwen2.5-coder:7b` | `20261003T035503Z-smoke-ae34538d` | completed | 0/3 | 404.31 s |
 | `qwen3.5:9b` | `20261003T040917Z-qwen35-9b-smoke-0deb827c` | completed | 0/3 | 850.65 s |
 | `qwen2.5-coder:14b` | `20261003T043750Z-qwen25-coder-14b-smoke-7a3e6cf3` | completed | 0/3 | 1,548.59 s |
+| `ornith:9b` | `20261003T055010Z-ornith-9b-smoke-a49f7a44` | completed | 0/3 | 1,543.09 s |
 
 All have exit code 0, all three scored tasks, no unknown outcomes, no reported
 test timeouts/task exceptions, and unchanged model digests before/after.
@@ -49,34 +50,39 @@ later runs. Image ID, adapter hash and task manifests matched across all runs.
   with a syntax error in both attempts (no tests collected; ~900 s in lint-fix
   loops, two Ollama context shifts at 8192); Go compiled on retry, 2/10 cases;
   Java passed 39/41. Host swap peaked at 9,526.88 MiB, so timing is unreliable.
-- [Combined CSV](../results/summary/results.csv) contains all three runs.
+- [Fourth experiment](experiment-20261003-ornith-9b.md): thinking filled the
+  8192 context; Python and Go answers were empty, so stubs stayed unchanged;
+  Java passed 39/41. The runner does not save `/api/ps`; this run has
+  `ollama-ps-after.json` (captured ~30 s after finish), not a during-run file.
+- [Combined CSV](../results/summary/results.csv) contains all four runs.
 - Full metadata: `metadata/runs/<run-id>.json`.
 - Raw outputs: `results/raw/<run-id>/`, including exact configurations,
   `command.json`, model settings, package inventory, histories, task records,
-  timing files, stdout/stderr, `stats.csv` and `ollama-ps-during.json`.
+  timing files, stdout/stderr, `stats.csv` and saved `/api/ps` observations.
 
 ## Existing setup (recheck before reuse)
 
 - Host observed: Apple M5 MacBook Air, 24 GiB unified memory, macOS 26.6.2,
   native arm64 Python 3.9.6. See `hardware/system-info-20261003.json`.
 - Ollama 0.35.1; downloaded models: `qwen2.5-coder:7b`, `qwen3.5:9b`,
-  `qwen2.5-coder:14b`.
+  `qwen2.5-coder:14b`, `ornith:9b`.
 - Docker 29.8.1; VM observed with 10 CPUs and 8,319,504,384 bytes memory.
 - Image: `local-llm-aider-benchmark:pinned`, native arm64. Already built.
   Inspect exact image IDs in run metadata; do not rebuild unnecessarily.
 - Sources are already fetched under ignored `.deps/`, at the pins in
   `configs/dependencies.json`. `make setup` is not needed if checks still pass.
-- All three models use Q4_K_M. Context 8192 was observed through `/api/ps`.
+- All four models use Q4_K_M. Context 8192 was observed through `/api/ps`.
 - Controls: temperature requested 0, whole-file editing, two attempts,
   one worker, seed 0, 6 GiB container RAM and 4 CPUs.
-- Configs: `configs/qwen35-9b-smoke.env`, `configs/qwen25-coder-14b-smoke.env`.
+- Configs: `configs/qwen35-9b-smoke.env`, `configs/qwen25-coder-14b-smoke.env`,
+  `configs/ornith-9b-smoke.env`.
   Ignored `configs/benchmark.env` still selected `qwen2.5-coder:7b` at the
   checkpoint. Always specify `BENCHMARK_CONFIG` when running another model.
 - `make check` passed all 15 tests before the first run; no runner changes were
-  made for the second or third. `make doctor` passed for each real run. Final
-  artifacts and summaries were verified for all three runs.
-- Git HEAD at the third run: `9d03a24` (handoff files added); earlier result
-  commits `13e4ed1` (`qwen3.5:9b`) and `bba6fdd` (`wen2.5-coder:7b`).
+  made for later runs. `make doctor` passed for each real run. Final
+  artifacts and summaries were verified for all four runs.
+- Git HEAD at the fourth run's start: `72e28f8` (`qwen2.5-coder:14b`); a
+  mid-run commit `8dfc27c` followed. Earlier result commits `13e4ed1` (`qwen3.5:9b`) and `bba6fdd` (`wen2.5-coder:7b`).
   Recheck current Git state rather than resetting to these commits.
 
 ## Important interpretation and troubleshooting notes
@@ -85,7 +91,7 @@ later runs. Image ID, adapter hash and task manifests matched across all runs.
    about 2.10 times the wall time, the third about 3.83 times; this is not a
    general model speed ranking.
 2. Aider automatically chose history summarization thresholds of 2048 tokens
-   for both Qwen2.5 models and 8192 for Qwen3.5. All runtime contexts were 8192. Other model
+   for both Qwen2.5 models and 8192 for Qwen3.5 and Ornith. All runtime contexts were 8192. Other model
    defaults differ; thinking mode and effective temperature were not traced.
 3. All runs were on AC. First run periodic peak swap: 117.44 MiB. Second run
    already started with 1,735.62 MiB swap, peaked at 2,658.81 MiB in periodic
@@ -93,6 +99,7 @@ later runs. Image ID, adapter hash and task manifests matched across all runs.
    Third run started at 2,496.06 MiB, peaked at 9,526.88 MiB and ended at
    9,435.19 MiB: the ~10 GB resident 14B model plus the 8 GiB Docker VM caused
    heavy swapping, so its timings are not clean speed measurements.
+   Fourth run started at 6,778 MiB (left over) and ended at 6,682 MiB.
    Whole-host/background/cooling conditions were not controlled.
 4. Initial sandbox probes falsely appeared unable to access Docker/Ollama.
    Native probes confirmed both services were healthy. Use environment

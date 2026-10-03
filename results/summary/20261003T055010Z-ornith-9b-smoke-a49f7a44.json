@@ -1,0 +1,64 @@
+{
+  "task_count": 3,
+  "passed": 0,
+  "failed": 3,
+  "completed_tasks": 3,
+  "unknown_tasks": 0,
+  "pass_rate": 0.0,
+  "total_time_sec": 1543.089582167,
+  "avg_time_sec": 512.8412143456667,
+  "peak_memory_mb": 23862.1875,
+  "peak_swap_mb": 6778.0,
+  "battery_start": 80,
+  "battery_end": 80,
+  "battery_drop": null,
+  "per_language": {
+    "go": {
+      "task_count": 1,
+      "completed": 1,
+      "passed": 0,
+      "failed": 1,
+      "pass_rate": 0.0
+    },
+    "java": {
+      "task_count": 1,
+      "completed": 1,
+      "passed": 0,
+      "failed": 1,
+      "pass_rate": 0.0
+    },
+    "python": {
+      "task_count": 1,
+      "completed": 1,
+      "passed": 0,
+      "failed": 1,
+      "pass_rate": 0.0
+    }
+  },
+  "tasks": [
+    {
+      "task": "python/exercises/practice/forth",
+      "language": "python",
+      "passed": false,
+      "duration_sec": 353.96011028600003,
+      "aider_duration_sec": 351.6493430137634
+    },
+    {
+      "task": "go/exercises/practice/alphametics",
+      "language": "go",
+      "passed": false,
+      "duration_sec": 860.590920436,
+      "aider_duration_sec": 858.1544163227081
+    },
+    {
+      "task": "java/exercises/practice/rational-numbers",
+      "language": "java",
+      "passed": false,
+      "duration_sec": 323.9726123149999,
+      "aider_duration_sec": 314.5593614578247
+    }
+  ],
+  "tokens_per_sec": null,
+  "temperature_celsius": null,
+  "power_watts": null
+}

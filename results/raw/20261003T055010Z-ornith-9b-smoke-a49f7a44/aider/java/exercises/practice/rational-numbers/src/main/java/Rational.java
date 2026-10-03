@@ -2,44 +2,77 @@ import java.util.Objects;
 
 class Rational {
 
+    private int numerator;
+    private int denominator;
+
     Rational(int numerator, int denominator) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        if (denominator == 0) {
+            throw new ArithmeticException("Denominator cannot be zero");
+        }
+        int gcd = gcd(Math.abs(numerator), Math.abs(denominator));
+        this.numerator = numerator / gcd;
+        this.denominator = denominator / gcd;
+        if (this.denominator < 0) {
+            this.numerator = -this.numerator;
+            this.denominator = -this.denominator;
+        }
     }
 
     int getNumerator() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return numerator;
     }
 
     int getDenominator() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return denominator;
     }
 
     Rational add(Rational other) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        int newNumerator = this.numerator * other.denominator + other.numerator * this.denominator;
+        int newDenominator = this.denominator * other.denominator;
+        return new Rational(newNumerator, newDenominator);
     }
 
     Rational subtract(Rational other) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        int newNumerator = this.numerator * other.denominator - other.numerator * this.denominator;
+        int newDenominator = this.denominator * other.denominator;
+        return new Rational(newNumerator, newDenominator);
     }
 
     Rational multiply(Rational other) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        int newNumerator = this.numerator * other.numerator;
+        int newDenominator = this.denominator * other.denominator;
+        return new Rational(newNumerator, newDenominator);
     }
 
     Rational divide(Rational other) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        if (other.numerator == 0) {
+            throw new ArithmeticException("Cannot divide by zero");
+        }
+        int newNumerator = this.numerator * other.denominator;
+        int newDenominator = this.denominator * other.numerator;
+        return new Rational(newNumerator, newDenominator);
     }
 
     Rational abs() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return new Rational(Math.abs(this.numerator), Math.abs(this.denominator));
     }
 
     Rational pow(int power) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        if (power >= 0) {
+            int newNumerator = (int) Math.pow(this.numerator, power);
+            int newDenominator = (int) Math.pow(this.denominator, power);
+            return new Rational(newNumerator, newDenominator);
+        } else {
+            int m = Math.abs(power);
+            int newNumerator = (int) Math.pow(this.denominator, m);
+            int newDenominator = (int) Math.pow(this.numerator, m);
+            return new Rational(newNumerator, newDenominator);
+        }
     }
 
     double exp(double exponent) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        double base = (double) this.numerator / this.denominator;
+        return Math.pow(base, exponent);
     }
 
     @Override
@@ -60,5 +93,14 @@ class Rational {
     @Override
     public int hashCode() {
         return Objects.hash(this.getNumerator(), this.getDenominator());
+    }
+
+    private int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
     }
 }

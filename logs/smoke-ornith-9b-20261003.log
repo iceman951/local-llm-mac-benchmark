@@ -19,3 +19,5 @@ BENCHMARK_TEST_COUNT=3 ./scripts/run-aider.sh
 [OK] Writable metadata/runs
 [OK] Writable logs
 Run: 20261003T055010Z-ornith-9b-smoke-a49f7a44; 3 tasks. Logs: results/raw/20261003T055010Z-ornith-9b-smoke-a49f7a44/
+Summarized 4 recorded runs into results/summary/results.csv
+Finished: completed
